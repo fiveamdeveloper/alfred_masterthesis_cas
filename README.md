@@ -25,3 +25,4 @@ Das Backend des Chatbot ist nicht ausführbar, da die .env Datei nicht mit hochg
 
 ## Ausführen des Chatbot UI
 Hierzu bitte in das Projektverzeichnis alfred-web navigieren. Darin ```npm start``` ausführen, dann werden alle Dependencies geladen und können ausgeführt werden.
+![React Web App für den Chatbot Alfred](alfred_react.png "React Web App für den Chatbot Alfred")
