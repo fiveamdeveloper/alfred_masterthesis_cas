@@ -7,6 +7,7 @@ Semester: SS/2021
 ## Installieren von Python sowie pip
 Python 3.11.8 siehe https://www.python.org/downloads/  
 pip siehe https://pip.pypa.io/en/stable/installation/
+NodeJS und npm https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
 ## Abhängigkeiten vor einem Test installieren
 Um die erforderlichen Python-Pakete zu installieren, die in der `requirements.txt` Datei aufgeführt sind, öffnen Sie bitte ein Terminal und und navigieren sie in das jeweilige Verzeichnis des Modells. Führen Sie darin den folgenden Befehl aus:
@@ -25,5 +26,5 @@ Das RF- und NN Modell befindet sich im jeweiligen Ordner. Darin befindet sich ei
 Das Backend des Chatbot ist nicht ausführbar, da die .env Datei nicht mit hochgeladen wurde. Darin befinden sich sensitive Zugangsdaten für das SAP sowie die LLM. Der Vollständigkeit wurden die Dateien jedoch hochgeladen. Das Module load_models lädt hierbei die entwickelten Modelle, ausgehend von der Konfiguration der Umgebungsvariablen. Das Modul model_inference beinhaltet die Klasse und Funktionen, um die Vorhersage durchzuführen und diese in Klartext aufzubereiten und den API-Request durchzuführen.
 
 ## Ausführen des Chatbot UI (React Web App)
-Hierzu bitte in das Projektverzeichnis alfred-react navigieren. Darin ```npm start``` ausführen, dann werden alle Dependencies geladen und können ausgeführt werden.  
+Hierzu bitte in das Projektverzeichnis alfred-react navigieren. Darin ```npm start``` ausführen, dann werden alle Dependencies geladen und können ausgeführt werden. Bitte beachten, dass NodeJS und npm zuvor installiert werden müssen. <br>
 ![React Web App für den Chatbot Alfred](alfred_react.png "React Web App für den Chatbot Alfred")
