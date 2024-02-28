@@ -23,7 +23,7 @@ Das dazugehörige Jupyter Notebook befindet sich im Ordner ```Named_Entitity_Rec
 Das RF- und NN Modell befindet sich im jeweiligen Ordner. Darin befindet sich ein Jupyter Notebook, mit dem die Klassifikation der API-Parameter getestet werden kann. Bitte die requirements.txt vor dem Test installieren.
 
 ## ChatbotConnectivityKit
-Das Backend des Chatbot ist nicht ausführbar, da die .env Datei nicht mit hochgeladen wurde. Darin befinden sich sensitive Zugangsdaten für das SAP sowie die LLM. Der Vollständigkeit wurden die Dateien jedoch hochgeladen. Das Module load_models lädt hierbei die entwickelten Modelle, ausgehend von der Konfiguration der Umgebungsvariablen. Das Modul model_inference beinhaltet die Klasse und Funktionen, um die Vorhersage durchzuführen und diese in Klartext aufzubereiten und den API-Request durchzuführen.
+Das Backend des Chatbot ist nicht ausführbar, da die .env Datei nicht mit hochgeladen wurde. Darin befinden sich sensitive Zugangsdaten für das SAP sowie die LLM. Der Vollständigkeit wurden die Dateien jedoch hochgeladen. Das Hauptmodul ist ```api.py```, welches das Module load_models lädt. Dieses lädt die entwickelten RF/NN-Modelle, ausgehend von der Konfiguration der Umgebungsvariablen. Das Modul ```model_inference.py``` beinhaltet die Klasse und Funktionen, um die Vorhersage durchzuführen und diese in Klartext aufzubereiten und den API-Request zum SAP System durchzuführen.
 
 ## Ausführen des Chatbot UI (React Web App)
 Hierzu bitte in das Projektverzeichnis alfred-react navigieren. Darin ```npm start``` ausführen, dann werden alle Dependencies geladen und können ausgeführt werden. Bitte beachten, dass NodeJS und npm zuvor installiert werden müssen. <br>
