@@ -1,0 +1,1390 @@
+[
+    {
+        "id": 1,
+        "prompt": "Wurde zum Auftrag 1240515 ein Wareneingang gebucht?",
+        "preprocessed_prompt": "Wurde zum Auftrag <ManufacturingOrder> ein Wareneingang gebucht?",
+        "entities": [
+            [
+                18,
+                25,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "OrderIsDelivered",
+            "OrderIsPartiallyDelivered",
+            "MfgOrderConfirmedYieldQty"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 2,
+        "prompt": "Wurde zum Auftrag 1240515 ein WE gebucht?",
+        "preprocessed_prompt": "Wurde zum Auftrag <ManufacturingOrder> ein Wareneingang gebucht?",
+        "entities": [
+            [
+                18,
+                25,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "ManufacturingOrder",
+            "OrderIsDelivered",
+            "OrderIsPartiallyDelivered",
+            "MfgOrderConfirmedYieldQty"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 3,
+        "prompt": "Ist der Auftrag 1240515 Wareneingang gebucht?",
+        "preprocessed_prompt": "Ist der Auftrag <ManufacturingOrder> Wareneingang gebucht?",
+        "entities": [
+            [
+                16,
+                23,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "ManufacturingOrder",
+            "TotalQuantity",
+            "MfgOrderConfirmedYieldQty"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 4,
+        "prompt": "Welche Menge des Auftrags 1076543 ist Wareneingang gebucht?",
+        "preprocessed_prompt": "Welche Menge des Auftrags <ManufacturingOrder> ist Wareneingang gebucht?",
+        "entities": [
+            [
+                26,
+                33,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "ManufacturingOrder",
+            "TotalQuantity",
+            "MfgOrderConfirmedYieldQty"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 5,
+        "prompt": "Hat der Auftrag 1076543 einen WE?",
+        "preprocessed_prompt": "Hat der Auftrag <ManufacturingOrder> einen WE?",
+        "entities": [
+            [
+                16,
+                23,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "OrderIsDelivered",
+            "OrderIsPartiallyDelivered",
+            "TotalQuantity",
+            "MfgOrderConfirmedYieldQty"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 6,
+        "prompt": "Gib mir Informationen zur Rückmeldung für den Auftrag 1122334.",
+        "preprocessed_prompt": "Gib mir Informationen zur Rückmeldung für den Auftrag <OrderId>.",
+        "entities": [
+            [
+                54,
+                61,
+                "OrderId"
+            ]
+        ],
+        "required": [],
+        "filter": [
+            "OrderId"
+        ],
+        "select": [
+            "ConfirmationGroup",
+            "ConfirmationCount",
+            "EnteredByUser",
+            "ConfirmationEntryDate",
+            "ConfirmationEntryTime"
+        ],
+        "method": "GET",
+        "endpoint": "API_PROD_ORDER_CONFIRMATION_2_SRV/ProdnOrdConf2"
+    },
+    {
+        "id": 7,
+        "prompt": "Zeig mir die Rückmeldungen für den Auftrag 1122334.",
+        "preprocessed_prompt": "Zeig mir die Rückmeldungen für den Auftrag <OrderId>.",
+        "entities": [
+            [
+                43,
+                50,
+                "OrderId"
+            ]
+        ],
+        "required": [],
+        "filter": [
+            "OrderId"
+        ],
+        "select": [
+            "ConfirmationEntryDate",
+            "ConfirmationEntryTime"
+        ],
+        "method": "GET",
+        "endpoint": "API_PROD_ORDER_CONFIRMATION_2_SRV/ProdnOrdConf2"
+    },
+    {
+        "id": 8,
+        "prompt": "Wann war die letzte Rückmeldung bei Auftrag 1122334?",
+        "preprocessed_prompt": "Wann war die letzte Rückmeldung bei Auftrag <OrderId>?",
+        "entities": [
+            [
+                44,
+                51,
+                "OrderId"
+            ]
+        ],
+        "required": [
+            "OrderId"
+        ],
+        "select": [
+            "ConfirmationEntryDate",
+            "ConfirmationEntryTime"
+        ],
+        "alfred": [
+            "last"
+        ],
+        "method": "GET",
+        "endpoint": "API_PROD_ORDER_CONFIRMATION_2_SRV/ProdnOrdConf2"
+    },
+    {
+        "id": 9,
+        "prompt": "Welchen Status hat der Auftrag 1998765?",
+        "preprocessed_prompt": "Welchen Status hat der Auftrag <ManufacturingOrder>?",
+        "entities": [
+            [
+                31,
+                38,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "expand": [
+            "to_ProductionOrderStatus"
+        ],
+        "select": [
+            "StatusCode",
+            "StatusName"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2",
+        "presentation": "table"
+    },
+    {
+        "id": 10,
+        "prompt": "Kannst du mir den aktuellen Status für Auftrag 1045678 mitteilen?",
+        "preprocessed_prompt": "Kannst du mir den aktuellen Status für Auftrag <ManufacturingOrder> mitteilen?",
+        "entities": [
+            [
+                47,
+                54,
+                "ManufacturingOrder"
+            ]
+        ],
+        "expand": [
+            "to_ProductionOrderStatus"
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "ManufacturingOrder",
+            "StatusCode",
+            "StatusName"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2",
+        "presentation": "table"
+    },
+    {
+        "id": 11,
+        "prompt": "Zeig mir den Status des Auftrages 1845678.",
+        "preprocessed_prompt": "Zeig mir den Status des Auftrages <ManufacturingOrder>.",
+        "entities": [
+            [
+                34,
+                41,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "expand": [
+            "to_ProductionOrderStatus"
+        ],
+        "select": [
+            "ManufacturingOrder",
+            "StatusCode",
+            "StatusName"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2",
+        "presentation": "table"
+    },
+    {
+        "id": 12,
+        "prompt": "Wie ist der Status des Auftrages 1998765?",
+        "preprocessed_prompt": "Wie ist der Status des Auftrages <ManufacturingOrder>?",
+        "entities": [
+            [
+                33,
+                40,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "expand": [
+            "to_ProductionOrderStatus"
+        ],
+        "select": [
+            "ManufacturingOrder",
+            "StatusCode",
+            "StatusName"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2",
+        "presentation": "table"
+    },
+    {
+        "id": 13,
+        "prompt": "Wann war die letzte Rückmeldung bei Auftrag 1998765?",
+        "preprocessed_prompt": "Wann war die letzte Rückmeldung bei Auftrag <OrderId>?",
+        "entities": [
+            [
+                44,
+                51,
+                "OrderId"
+            ]
+        ],
+        "required": [
+            "OrderId"
+        ],
+        "select": [
+            "OrderId",
+            "ConfirmationEntryDate",
+            "ConfirmationEntryTime"
+        ],
+        "alfred": [
+            "last"
+        ],
+        "method": "GET",
+        "endpoint": "API_PROD_ORDER_CONFIRMATION_2_SRV/ProdnOrdConf2"
+    },
+    {
+        "id": 13,
+        "prompt": "Wer hat den Auftrag 1923456 rückgemeldet?",
+        "preprocessed_prompt": "Wer hat den Auftrag <OrderId> rückgemeldet?",
+        "entities": [
+            [
+                20,
+                27,
+                "OrderId"
+            ]
+        ],
+        "required": [],
+        "filter": [
+            "OrderId"
+        ],
+        "select": [
+            "OrderId",
+            "ConfirmationGroup",
+            "ConfirmationCount",
+            "ConfirmationEntryDate",
+            "ConfirmationEntryTime",
+            "EnteredByUser",
+            "PostingDate",
+            "IsReversed",
+            "IsReversal",
+            "IsFinalConfirmation"
+        ],
+        "method": "GET",
+        "endpoint": "API_PROD_ORDER_CONFIRMATION_2_SRV/ProdnOrdConf2"
+    },
+    {
+        "id": 15,
+        "prompt": "Zeig mir die Rückmeldung 1547.",
+        "preprocessed_prompt": "Zeig mir die Rückmeldung <ConfirmationGroup>.",
+        "entities": [
+            [
+                25,
+                29,
+                "ConfirmationGroup"
+            ]
+        ],
+        "required": [
+            "ConfirmationGroup"
+        ],
+        "select": [
+            "OrderId",
+            "ConfirmationCount",
+            "OrderOperation",
+            "ConfirmationEntryDate",
+            "ConfirmationEntryTime",
+            "EnteredByUser",
+            "PostingDate",
+            "IsReversed",
+            "IsReversal",
+            "IsFinalConfirmation"
+        ],
+        "method": "GET",
+        "endpoint": "API_PROD_ORDER_CONFIRMATION_2_SRV/ProdnOrdConf2"
+    },
+    {
+        "id": 16,
+        "prompt": "Wer hat die Rückmeldung für Auftrag 1923456 durchgeführt?",
+        "preprocessed_prompt": "Wer hat die Rückmeldung für Auftrag <OrderId> durchgeführt?",
+        "entities": [
+            [
+                36,
+                43,
+                "OrderId"
+            ]
+        ],
+        "required": [],
+        "filter": [
+            "OrderId"
+        ],
+        "select": [
+            "ConfirmationCount",
+            "OrderOperation",
+            "ConfirmationEntryDate",
+            "ConfirmationEntryTime",
+            "EnteredByUser",
+            "PostingDate",
+            "IsReversed",
+            "IsReversal",
+            "IsFinalConfirmation"
+        ],
+        "method": "GET",
+        "endpoint": "API_PROD_ORDER_CONFIRMATION_2_SRV/ProdnOrdConf2"
+    },
+    {
+        "id": 17,
+        "prompt": "Welche Komponenten werden für den Auftrag 1324567 benötigt?",
+        "preprocessed_prompt": "Welche Komponenten werden für den Auftrag <ManufacturingOrder> benötigt?",
+        "entities": [
+            [
+                42,
+                49,
+                "ManufacturingOrder"
+            ]
+        ],
+        "expand": [
+            "to_ProductionOrderComponent"
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "ManufacturingOrder",
+            "Material",
+            "ProductionPlant",
+            "RequiredQuantity",
+            "BaseUnit",
+            "ManufacturingOrderOperation"
+        ],
+        "presentation": "table",
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 18,
+        "prompt": "Aus welchen Komponenten setzt sich Auftrag 1324567 zusammen?",
+        "preprocessed_prompt": "Aus welchen Komponenten setzt sich Auftrag <ManufacturingOrder> zusammen?",
+        "entities": [
+            [
+                43,
+                50,
+                "ManufacturingOrder"
+            ]
+        ],
+        "expand": [
+            "to_ProductionOrderComponent"
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "ManufacturingOrder",
+            "Material",
+            "ProductionPlant",
+            "RequiredQuantity",
+            "BaseUnit",
+            "ManufacturingOrderOperation"
+        ],
+        "presentation": "table",
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 19,
+        "prompt": "Was sind die Komponenten von Auftrag 1045678?",
+        "preprocessed_prompt": "Was sind die Komponenten von Auftrag <ManufacturingOrder>?",
+        "entities": [
+            [
+                37,
+                44,
+                "ManufacturingOrder"
+            ]
+        ],
+        "expand": [
+            "to_ProductionOrderComponent"
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "ManufacturingOrder",
+            "Material",
+            "ProductionPlant",
+            "RequiredQuantity",
+            "BaseUnit",
+            "ManufacturingOrderOperation"
+        ],
+        "presentation": "table",
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 20,
+        "prompt": "Welche Schritte wurden bereits im Auftrag 1612345 durchgeführt?",
+        "preprocessed_prompt": "Welche Schritte wurden bereits im Auftrag <ManufacturingOrder> durchgeführt?",
+        "entities": [
+            [
+                42,
+                49,
+                "ManufacturingOrder"
+            ]
+        ],
+        "expand": [
+            "to_ProductionOrderOperation"
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "ManufacturingOrder",
+            "ManufacturingOrderOperation",
+            "MfgOrderOperationText",
+            "OperationIsConfirmed",
+            "OperationIsPartiallyConfirmed"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2",
+        "presentation": "table"
+    },
+    {
+        "id": 21,
+        "prompt": "Ich möchte wissen, welche Vorgänge im Zusammenhang mit Auftrag 1324567 stehen.",
+        "preprocessed_prompt": "Ich möchte wissen, welche Vorgänge im Zusammenhang mit Auftrag <ManufacturingOrder> stehen.",
+        "entities": [
+            [
+                63,
+                70,
+                "ManufacturingOrder"
+            ]
+        ],
+        "expand": [
+            "to_ProductionOrderOperation"
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "ManufacturingOrderOperation",
+            "MfgOrderOperationText",
+            "OperationIsConfirmed",
+            "OperationIsPartiallyConfirmed"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2",
+        "presentation": "table"
+    },
+    {
+        "id": 22,
+        "prompt": "Welche Aufträge haben einen Liefertermin in den nächsten 3 Tagen?",
+        "preprocessed_prompt": "Welche Aufträge haben einen Liefertermin in den nächsten 1 Tagen?",
+        "entities": [
+            [
+                57,
+                58,
+                "numberOfDays"
+            ]
+        ],
+        "select": [
+            "ManufacturingOrder",
+            "Plant",
+            "Material"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2",
+        "presentation": "table"
+    },
+    {
+        "id": 23,
+        "prompt": "Überprüfe ob der Auftrag 1240515 schon einen Wareneingang hat.",
+        "preprocessed_prompt": "Überprüfe ob der Auftrag <ManufacturingOrder> schon einen Wareneingang hat.",
+        "entities": [
+            [
+                25,
+                32,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "ManufacturingOrder",
+            "TotalQuantity",
+            "MfgOrderConfirmedYieldQty"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 24,
+        "prompt": "Wie ist der Kundenauftrag zum Fauf 1899999?",
+        "preprocessed_prompt": "Wie ist der Kundenauftrag zum Fauf <ManufacturingOrder>?",
+        "answer": "Der Kundenauftrag lautet <SalesOrder>. Der Fertigungsauftrag <ManufacturingOrder> gehört zur Kundenauftragsposition <SalesOrderItem>.",
+        "entities": [
+            [
+                35,
+                42,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "ManufacturingOrder",
+            "SalesOrder",
+            "SalesOrderItem",
+            "TotalQuantity"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 25,
+        "prompt": "Gib den Auftrag 1240515 frei.",
+        "preprocessed_prompt": "Gib den Auftrag <ManufacturingOrder> frei.",
+        "entities": [
+            [
+                16,
+                23,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [],
+        "method": "POST",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2/ReleaseOrder"
+    },
+    {
+        "id": 26,
+        "prompt": "Schließe den Auftrag 1240515 technisch ab.",
+        "preprocessed_prompt": "Schließe den Auftrag <ManufacturingOrder> technisch ab.",
+        "entities": [
+            [
+                21,
+                28,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [],
+        "method": "POST",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2/TechlyCmpltOrder"
+    },
+    {
+        "id": 27,
+        "prompt": "Schliesse den Auftrag 1240515 technisch ab.",
+        "preprocessed_prompt": "Schliesse den Auftrag <ManufacturingOrder> technisch ab.",
+        "entities": [
+            [
+                22,
+                29,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [],
+        "method": "POST",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2/TechlyCmpltOrder"
+    },
+    {
+        "id": 28,
+        "prompt": "Wie lautet der Kundenauftrag zum Fertigungsauftrag 1899999?",
+        "preprocessed_prompt": "Wie lautet der Kundenauftrag zum Fertigungsauftrag <ManufacturingOrder>?",
+        "answer": "Der Kundenauftrag lautet <SalesOrder>. Der Auftrag <ManufacturingOrder> gehört zur Kundenauftragsposition <SalesOrderItem>.",
+        "entities": [
+            [
+                51,
+                58,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "SalesOrder",
+            "SalesOrderItem",
+            "TotalQuantity"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 29,
+        "prompt": "Wie lautet der Kundenauftrag zum Auftrag 1899999?",
+        "preprocessed_prompt": "Wie lautet der Kundenauftrag zum Auftrag <ManufacturingOrder>?",
+        "answer": "Der Kundenauftrag lautet <SalesOrder>. Der Auftrag <ManufacturingOrder> gehört zur Kundenauftragsposition <SalesOrderItem>.",
+        "entities": [
+            [
+                41,
+                48,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "SalesOrder",
+            "SalesOrderItem"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 30,
+        "prompt": "Aus welchen Vorgängen besteht der Auftrag 1612345? Gib mir die Auftragsstückliste aus.",
+        "preprocessed_prompt": "Aus welchen Vorgängen besteht der Auftrag <ManufacturingOrder>? Gib mir die Auftragsstückliste aus.",
+        "entities": [
+            [
+                42,
+                49,
+                "ManufacturingOrder"
+            ]
+        ],
+        "expand": [
+            "to_ProductionOrderOperation",
+            "to_ProductionOrderComponent"
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "Material",
+            "ManufacturingOrderOperation",
+            "MfgOrderOperationText",
+            "OperationIsConfirmed",
+            "OperationIsPartiallyConfirmed"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2",
+        "presentation": "table"
+    },
+    {
+        "id": 31,
+        "prompt": "Zeig mir die Rückmeldungen zum Auftrag 1612345.",
+        "preprocessed_prompt": "Zeig mir die Rückmeldungen zum Auftrag <OrderId>.",
+        "entities": [
+            [
+                39,
+                46,
+                "OrderId"
+            ]
+        ],
+        "required": [
+            "ConfirmationGroup"
+        ],
+        "filter": [
+            "OrderId"
+        ],
+        "select": [
+            "OrderId",
+            "ConfirmationCount",
+            "OrderOperation",
+            "ConfirmationEntryDate",
+            "ConfirmationEntryTime",
+            "EnteredByUser",
+            "PostingDate",
+            "IsReversed",
+            "IsReversal",
+            "IsFinalConfirmation"
+        ],
+        "method": "GET",
+        "endpoint": "API_PROD_ORDER_CONFIRMATION_2_SRV/ProdnOrdConf2",
+        "presentation": "table"
+    },
+    {
+        "id": 32,
+        "prompt": "Wie ist der aktuelle Status zum Auftrag 1612345.",
+        "preprocessed_prompt": "Wie ist der aktuelle Status zum Auftrag <ManufacturingOrder>.",
+        "entities": [
+            [
+                40,
+                47,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "filter": [],
+        "select": [
+            "OrderId",
+            "Material",
+            "Material desc",
+            "OrderIsCreated",
+            "OrderIsReleased",
+            "OrderIsPrinted",
+            "OrderIsConfirmed",
+            "OrderIsPartiallyConfirmed",
+            "OrderIsTechnicallyCompleted",
+            "OrderIsClosed",
+            "OrderIsPartiallyDelivered",
+            "OrderIsMarkedForDeletion",
+            "MfgOrderScheduledStartDate",
+            "MfgOrderScheduledStartTime",
+            "MfgOrderScheduledEndDate",
+            "MfgOrderScheduledEndTime",
+            "MfgOrderActualReleaseDate",
+            "TotalQuantity",
+            "ProductionUnitISOCode desc",
+            "MfgOrderConfirmedYieldQty",
+            "CustomerName"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 33,
+        "prompt": "Fasse mir den Status zum Auftrag 1612345 zusammen.",
+        "preprocessed_prompt": "Fasse mir den Status zum Auftrag <ManufacturingOrder> zusammen.",
+        "entities": [
+            [
+                33,
+                40,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "filter": [],
+        "select": [
+            "OrderId",
+            "Material",
+            "Material desc",
+            "OrderIsCreated",
+            "OrderIsReleased",
+            "OrderIsPrinted",
+            "OrderIsConfirmed",
+            "OrderIsPartiallyConfirmed",
+            "OrderIsTechnicallyCompleted",
+            "OrderIsClosed",
+            "OrderIsPartiallyDelivered",
+            "OrderIsMarkedForDeletion",
+            "MfgOrderScheduledStartDate",
+            "MfgOrderScheduledStartTime",
+            "MfgOrderScheduledEndDate",
+            "MfgOrderScheduledEndTime",
+            "MfgOrderActualReleaseDate",
+            "TotalQuantity",
+            "ProductionUnitISOCode desc",
+            "MfgOrderConfirmedYieldQty",
+            "CustomerName"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 34,
+        "prompt": "Gib mir eine Zusammenfassung für den Auftrag 1612345.",
+        "preprocessed_prompt": "Gib mir eine Zusammenfassung für den Auftrag <ManufacturingOrder>.",
+        "entities": [
+            [
+                45,
+                52,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "filter": [],
+        "select": [
+            "OrderId",
+            "Material",
+            "Material desc",
+            "OrderIsCreated",
+            "OrderIsReleased",
+            "OrderIsPrinted",
+            "OrderIsConfirmed",
+            "OrderIsPartiallyConfirmed",
+            "OrderIsTechnicallyCompleted",
+            "OrderIsClosed",
+            "OrderIsPartiallyDelivered",
+            "OrderIsMarkedForDeletion",
+            "MfgOrderScheduledStartDate",
+            "MfgOrderScheduledStartTime",
+            "MfgOrderScheduledEndDate",
+            "MfgOrderScheduledEndTime",
+            "MfgOrderActualReleaseDate",
+            "TotalQuantity",
+            "ProductionUnitISOCode desc",
+            "MfgOrderConfirmedYieldQty",
+            "CustomerName"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 35,
+        "prompt": "Fasse mir den Bearbeitungsstatus des Auftrag 1612345 zusammen.",
+        "preprocessed_prompt": "Fasse mir den Bearbeitungsstatus des Auftrag <ManufacturingOrder> zusammen.",
+        "entities": [
+            [
+                45,
+                52,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "filter": [],
+        "select": [
+            "OrderId",
+            "Material",
+            "Material desc",
+            "OrderIsCreated",
+            "OrderIsReleased",
+            "OrderIsPrinted",
+            "OrderIsConfirmed",
+            "OrderIsPartiallyConfirmed",
+            "OrderIsTechnicallyCompleted",
+            "OrderIsClosed",
+            "OrderIsPartiallyDelivered",
+            "OrderIsMarkedForDeletion",
+            "MfgOrderScheduledStartDate",
+            "MfgOrderScheduledStartTime",
+            "MfgOrderScheduledEndDate",
+            "MfgOrderScheduledEndTime",
+            "MfgOrderActualReleaseDate",
+            "TotalQuantity",
+            "ProductionUnitISOCode desc",
+            "MfgOrderConfirmedYieldQty",
+            "CustomerName"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 36,
+        "prompt": "Wie ist der Kopfstatus für den Auftrag 1612345?",
+        "preprocessed_prompt": "Fasse mir den Bearbeitungsstatus des Auftrag <ManufacturingOrder> zusammen.",
+        "entities": [
+            [
+                39,
+                46,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "filter": [],
+        "select": [
+            "OrderId",
+            "Material",
+            "Material desc",
+            "OrderIsCreated",
+            "OrderIsReleased",
+            "OrderIsPrinted",
+            "OrderIsConfirmed",
+            "OrderIsPartiallyConfirmed",
+            "OrderIsTechnicallyCompleted",
+            "OrderIsClosed",
+            "OrderIsPartiallyDelivered",
+            "OrderIsMarkedForDeletion",
+            "MfgOrderScheduledStartDate",
+            "MfgOrderScheduledStartTime",
+            "MfgOrderScheduledEndDate",
+            "MfgOrderScheduledEndTime",
+            "MfgOrderActualReleaseDate",
+            "TotalQuantity",
+            "ProductionUnitISOCode desc",
+            "MfgOrderConfirmedYieldQty",
+            "CustomerName"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    },
+    {
+        "id": 37,
+        "prompt": "Wie heißt das Material 4711?",
+        "preprocessed_prompt": "Wie heißt das Material <Product>?",
+        "entities": [
+            [
+                23,
+                27,
+                "Product"
+            ]
+        ],
+        "required": [
+            "Product"
+        ],
+        "filter": [],
+        "select": [
+            "Product",
+            "Product desc",
+            "ProductType"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCT_SRV/A_Product"
+    },
+    {
+        "id": 38,
+        "prompt": "Wie lautet die Beschreibung für das Produkt 4711?",
+        "preprocessed_prompt": "Wie lautet die Beschreibung für das Produkt <Product>?",
+        "entities": [
+            [
+                44,
+                48,
+                "Product"
+            ]
+        ],
+        "required": [
+            "Product"
+        ],
+        "filter": [],
+        "select": [
+            "Product",
+            "ProductDescription",
+            "ProductType"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCT_SRV/A_Product"
+    },
+    {
+        "id": 39,
+        "prompt": "Was kostet das Produkt 5678?",
+        "preprocessed_prompt": "Was kostet das Produkt <Product>?",
+        "entities": [
+            [
+                23,
+                27,
+                "Product"
+            ]
+        ],
+        "required": [
+            "Product"
+        ],
+        "filter": [],
+        "select": [
+            "Product",
+            "Price"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCT_SRV/A_Product"
+    },
+    {
+        "id": 40,
+        "prompt": "Zu welchem Typ gehört Produkt 8910?",
+        "preprocessed_prompt": "Zu welchem Typ gehört Produkt <Product>?",
+        "entities": [
+            [
+                30,
+                34,
+                "Product"
+            ]
+        ],
+        "required": [
+            "Product"
+        ],
+        "filter": [],
+        "select": [
+            "Product",
+            "ProductType",
+            "ProductType desc"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCT_SRV/A_Product"
+    },
+    {
+        "id": 51,
+        "prompt": "Welche Maßeinheiten verwendet Produkt 8910?",
+        "preprocessed_prompt": "Welche Maßeinheiten verwendet Produkt <Product>?",
+        "entities": [
+            [
+                38,
+                42,
+                "Product"
+            ]
+        ],
+        "required": [
+            "Product"
+        ],
+        "filter": [],
+        "select": [
+            "Product",
+            "Product desc",
+            "UnitOfMeasure"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCT_SRV/A_Product"
+    },
+    {
+        "id": 41,
+        "prompt": "Was sind die letzten Änderungen am Produkt UVWX?",
+        "preprocessed_prompt": "Was sind die letzten Änderungen am Produkt <Product>?",
+        "entities": [
+            [
+                35,
+                39,
+                "Product"
+            ]
+        ],
+        "required": [
+            "Product"
+        ],
+        "filter": [],
+        "select": [
+            "Product",
+            "LastChanges"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCT_SRV/A_Product"
+    },
+    {
+        "id": 42,
+        "prompt": "Zeige mir die Planungsdaten für das Produkt A100 im Werk 1000.",
+        "preprocessed_prompt": "Zeige mir die Planungsdaten für das Produkt <Product> im Werk <Plant>.",
+        "entities": [
+            [
+                34,
+                38,
+                "Product"
+            ],
+            [
+                46,
+                50,
+                "Plant"
+            ]
+        ],
+        "required": [
+            "Product",
+            "Plant"
+        ],
+        "filter": [],
+        "select": [
+            "Product",
+            "Plant",
+            "MRPType",
+            "MRPResponsible",
+            "MinimumLotSizeQuantity",
+            "MaximumLotSizeQuantity",
+            "ProfitCenter",
+            "ProductionInvtryManagedLoc",
+            "ABCIndicator"
+        ],
+        "expand": "to_PlantMRPArea",
+        "method": "GET",
+        "endpoint": "API_PRODUCT_SRV/A_ProductPlant"
+    },
+    {
+        "id": 43,
+        "prompt": "Benötige MRP-Controller-Informationen für Produkt B200 im Werk 2000.",
+        "preprocessed_prompt": "Benötige MRP-Controller-Informationen für Produkt <Product> im Werk <Plant>.",
+        "entities": [
+            [
+                40,
+                44,
+                "Product"
+            ],
+            [
+                52,
+                56,
+                "Plant"
+            ]
+        ],
+        "required": [
+            "Product",
+            "Plant"
+        ],
+        "filter": [],
+        "select": [
+            "Product",
+            "Plant",
+            "MRPResponsible",
+            "MRPType",
+            "ABCIndicator",
+            "ProfitCenter"
+        ],
+        "expand": "to_PlantMRPArea",
+        "method": "GET",
+        "endpoint": "API_PRODUCT_SRV/A_ProductPlant"
+    },
+    {
+        "id": 44,
+        "prompt": "Was ist das Mindest- und Maximallos für Produkt C300 in Werk 3000?",
+        "preprocessed_prompt": "Was ist das Mindest- und Maximallos für Produkt <Product> in Werk <Plant>?",
+        "entities": [
+            [
+                33,
+                37,
+                "Product"
+            ],
+            [
+                45,
+                49,
+                "Plant"
+            ]
+        ],
+        "required": [
+            "Product",
+            "Plant"
+        ],
+        "filter": [],
+        "select": [
+            "Product",
+            "Plant",
+            "MinimumLotSizeQuantity",
+            "MaximumLotSizeQuantity",
+            "FixedLotSizeQuantity"
+        ],
+        "expand": "to_PlantMRPArea",
+        "method": "GET",
+        "endpoint": "API_PRODUCT_SRV/A_ProductPlant"
+    },
+    {
+        "id": 45,
+        "prompt": "Gib mir die ABC-Klassifizierung und das Profit Center für Produkt E500 im Werk 5000.",
+        "preprocessed_prompt": "Gib mir die ABC-Klassifizierung und den Gewinnzentrum für Produkt <Product> im Werk <Plant>.",
+        "entities": [
+            [
+                38,
+                42,
+                "Product"
+            ],
+            [
+                54,
+                58,
+                "Plant"
+            ]
+        ],
+        "required": [
+            "Product",
+            "Plant"
+        ],
+        "filter": [],
+        "select": [
+            "Product",
+            "Plant",
+            "ABCIndicator",
+            "ProfitCenter"
+        ],
+        "expand": "to_PlantMRPArea",
+        "method": "GET",
+        "endpoint": "API_PRODUCT_SRV/A_ProductPlant"
+    },
+    {
+        "id": 46,
+        "prompt": "Benötige die Losgrößenbeschränkungen für Produkt G700 im Werk 7000.",
+        "preprocessed_prompt": "Benötige die Losgrößenbeschränkungen für Produkt <Product> im Werk <Plant>.",
+        "entities": [
+            [
+                40,
+                44,
+                "Product"
+            ],
+            [
+                56,
+                60,
+                "Plant"
+            ]
+        ],
+        "required": [
+            "Product",
+            "Plant"
+        ],
+        "filter": [],
+        "select": [
+            "Product",
+            "Plant",
+            "MinimumLotSizeQuantity",
+            "MaximumLotSizeQuantity",
+            "FixedLotSizeQuantity"
+        ],
+        "expand": "to_PlantMRPArea",
+        "method": "GET",
+        "endpoint": "API_PRODUCT_SRV/A_ProductPlant"
+    },
+    {
+        "id": 47,
+        "prompt": "Zeige den Verantwortlichen für MRP für Produkt H800 in Werk 8000.",
+        "preprocessed_prompt": "Zeige den Verantwortlichen für MRP für Produkt <Product> im Werk <Plant>.",
+        "entities": [
+            [
+                42,
+                46,
+                "Product"
+            ],
+            [
+                58,
+                62,
+                "Plant"
+            ]
+        ],
+        "required": [
+            "Product",
+            "Plant"
+        ],
+        "filter": [],
+        "select": [
+            "Product",
+            "Plant",
+            "MRPResponsible"
+        ],
+        "expand": "to_PlantMRPArea",
+        "method": "GET",
+        "endpoint": "API_PRODUCT_SRV/A_ProductPlant"
+    },
+    {
+        "id": 48,
+        "prompt": "Welche Verfügbarkeitsprüfung wird für Produkt I900 im Werk 9000 angewendet?",
+        "preprocessed_prompt": "Welche Verfügbarkeitsprüfung wird für Produkt <Product> im Werk <Plant> angewendet?",
+        "entities": [
+            [
+                47,
+                51,
+                "Product"
+            ],
+            [
+                63,
+                67,
+                "Plant"
+            ]
+        ],
+        "required": [
+            "Product",
+            "Plant"
+        ],
+        "filter": [],
+        "select": [
+            "Product",
+            "Plant",
+            "AvailabilityCheckType"
+        ],
+        "expand": "to_PlantMRPArea",
+        "method": "GET",
+        "endpoint": "API_PRODUCT_SRV/A_ProductPlant"
+    },
+    {
+        "id": 49,
+        "prompt": "Gib die Mindest- und Höchstbestände für Produkt J010 im Werk 0010 an.",
+        "preprocessed_prompt": "Gib die Mindest- und Höchstbestände für Produkt <Product> im Werk <Plant> an.",
+        "entities": [
+            [
+                42,
+                46,
+                "Product"
+            ],
+            [
+                58,
+                62,
+                "Plant"
+            ]
+        ],
+        "required": [
+            "Product",
+            "Plant"
+        ],
+        "filter": [],
+        "select": [
+            "Product",
+            "Plant",
+            "MinimumLotSizeQuantity",
+            "MaximumLotSizeQuantity"
+        ],
+        "expand": "to_PlantMRPArea",
+        "method": "GET",
+        "endpoint": "API_PRODUCT_SRV/A_ProductPlant"
+    },
+    {
+        "id": 50,
+        "prompt": "Wie ist der Kundenauftrag zum Auftrag 1899999?",
+        "preprocessed_prompt": "Wie ist der Kundenauftrag zum Auftrag <ManufacturingOrder>?",
+        "answer": "Der Kundenauftrag lautet <SalesOrder>. Der Fertigungsauftrag <ManufacturingOrder> gehört zur Kundenauftragsposition <SalesOrderItem>.",
+        "entities": [
+            [
+                49,
+                46,
+                "ManufacturingOrder"
+            ]
+        ],
+        "required": [
+            "ManufacturingOrder"
+        ],
+        "select": [
+            "ManufacturingOrder",
+            "SalesOrder",
+            "SalesOrderItem",
+            "TotalQuantity"
+        ],
+        "method": "GET",
+        "endpoint": "API_PRODUCTION_ORDER_2_SRV/A_ProductionOrder_2"
+    }
+]
