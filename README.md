@@ -16,7 +16,7 @@ pip install -r requirements.txt
 ```
 
 ## Testen der Named Entity Recognition (NER)
-Das Modell ist im Ordner NER-Modell. Bitte die requirements.txt vor dem Test installieren.
+Das dazugehörige Jupyter Notebook befindet sich im Ordner ```Named_Entitity_Recognition_NER```. Bitte die requirements.txt vor dem Test installieren.
 
 ## Testen der Klassifikationsergebnisse
 Das RF- und NN Modell befindet sich im jeweiligen Ordner. Darin befindet sich ein Jupyter Notebook, mit dem die Klassifikation der API-Parameter getestet werden kann. Bitte die requirements.txt vor dem Test installieren.
