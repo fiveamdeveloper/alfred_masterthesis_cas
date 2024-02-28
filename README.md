@@ -1,6 +1,6 @@
 # Entwicklung und Evaluation eines KI-gestützten Assistenten zur Interaktion mit SAP S/4HANA in der Produktionsplanung und -steuerung
-In diesem Repository befinden sich alle Entwickelten Artefakte im Rahmen der Masterarbeit
-Matrikelnummer: 6857683
+In diesem Repository befinden sich alle Entwickelten Artefakte im Rahmen der Masterarbeit  
+Matrikelnummer: 6857683  
 Semester: SS/2021
 
 ## Installieren von Python sowie pip
