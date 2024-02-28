@@ -1,5 +1,5 @@
-# Mitgeltende Unterlagen für die Masterarbeit
-Themenstellung: Entwicklung und Evaluation eines KI-gestützten Assistenten zur Interaktion mit SAP S/4HANA in der Produktionsplanung und -steuerung  
+# Entwicklung und Evaluation eines KI-gestützten Assistenten zur Interaktion mit SAP S/4HANA in der Produktionsplanung und -steuerung
+In diesem Repository befinden sich alle Entwickelten Artefakte im Rahmen der Masterarbeit
 Matrikelnummer: 6857683
 Semester: SS/2021
 
@@ -19,6 +19,9 @@ Das Modell ist im Ordner NER-Modell. Bitte die requirements.txt vor dem Test ins
 
 ## Testen der Klassifikationsergebnisse
 Das RF- und NN Modell befindet sich im jeweiligen Ordner. Darin befindet sich ein Jupyter Notebook, mit dem die Klassifikation der API-Parameter getestet werden kann. Bitte die requirements.txt vor dem Test installieren.
+
+## CHatbotConnectivityKit
+Das Backend des Chatbot ist nicht ausführbar, da die .env Datei nicht mit hochgeladen wurde. Darin befinden sich sensitive Zugangsdaten für das SAP sowie die LLM. Der Vollständigkeit wurden die Dateien jedoch hochgeladen. Das Module load_models lädt hierbei die entwickelten Modelle, ausgehend von der Konfiguration der Umgebungsvariablen. Das Modul model_inference beinhaltet die Klasse und Funktionen, um die Vorhersage durchzuführen und diese in Klartext aufzubereiten und den API-Request durchzuführen.
 
 ## Ausführen des Chatbot UI
 Hierzu bitte in das Projektverzeichnis alfred-web navigieren. Darin ```npm start``` ausführen, dann werden alle Dependencies geladen und können ausgeführt werden.
