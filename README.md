@@ -24,6 +24,6 @@ Das RF- und NN Modell befindet sich im jeweiligen Ordner. Darin befindet sich ei
 ## CHatbotConnectivityKit
 Das Backend des Chatbot ist nicht ausführbar, da die .env Datei nicht mit hochgeladen wurde. Darin befinden sich sensitive Zugangsdaten für das SAP sowie die LLM. Der Vollständigkeit wurden die Dateien jedoch hochgeladen. Das Module load_models lädt hierbei die entwickelten Modelle, ausgehend von der Konfiguration der Umgebungsvariablen. Das Modul model_inference beinhaltet die Klasse und Funktionen, um die Vorhersage durchzuführen und diese in Klartext aufzubereiten und den API-Request durchzuführen.
 
-## Ausführen des Chatbot UI
-Hierzu bitte in das Projektverzeichnis alfred-web navigieren. Darin ```npm start``` ausführen, dann werden alle Dependencies geladen und können ausgeführt werden.
+## Ausführen des Chatbot UI (React Web App)
+Hierzu bitte in das Projektverzeichnis alfred-react navigieren. Darin ```npm start``` ausführen, dann werden alle Dependencies geladen und können ausgeführt werden.
 ![React Web App für den Chatbot Alfred](alfred_react.png "React Web App für den Chatbot Alfred")
