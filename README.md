@@ -26,10 +26,16 @@ Das RF- und NN Modell befindet sich im jeweiligen Ordner. Darin befindet sich ei
 Das Backend des Chatbot ist nicht ausführbar, da die .env Datei nicht mit hochgeladen wurde. Darin befinden sich sensitive Zugangsdaten für das SAP sowie die LLM. Der Vollständigkeit wurden die Dateien jedoch hochgeladen. Das Hauptmodul ist ```api.py```, welches das Module load_models lädt. Dieses lädt die entwickelten RF/NN-Modelle, ausgehend von der Konfiguration der Umgebungsvariablen. Das Modul ```model_inference.py``` beinhaltet die Klasse und Funktionen, um die Vorhersage durchzuführen und diese in Klartext aufzubereiten und den API-Request zum SAP System durchzuführen. ```config.py``` sorgt für die Zuweisung der Werte innerhalb der .env Datei.
 
 ## Ausführen des Chatbot UI (React Web App)
-Hierzu bitte in das Projektverzeichnis alfred-react navigieren. Darin
+Hierzu bitte in das Projektverzeichnis alfred-react navigieren. Darin zunächst
+
+```bash 
+npm install
+``` 
+ausführen. Dadurch werden alle Abhängigen Pakete für React geladen. Danach mit 
 
 ```bash 
 npm start
 ``` 
-ausführen, dann werden alle Dependencies geladen und können ausgeführt werden. Bitte beachten, dass NodeJS und npm zuvor installiert werden müssen. <br><br>
+
+die Web App starten. Dann werden alle Dependencies geladen und können ausgeführt werden. Bitte beachten, dass NodeJS und npm zuvor installiert werden müssen. <br><br>
 ![React Web App für den Chatbot Alfred](alfred_react.png "React Web App für den Chatbot Alfred")
