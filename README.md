@@ -31,5 +31,5 @@ Hierzu bitte in das Projektverzeichnis alfred-react navigieren. Darin
 ```bash 
 npm start
 ``` 
-ausführen, dann werden alle Dependencies geladen und können ausgeführt werden. Bitte beachten, dass NodeJS und npm zuvor installiert werden müssen. <br>
+ausführen, dann werden alle Dependencies geladen und können ausgeführt werden. Bitte beachten, dass NodeJS und npm zuvor installiert werden müssen. <br><br>
 ![React Web App für den Chatbot Alfred](alfred_react.png "React Web App für den Chatbot Alfred")
