@@ -1,4 +1,5 @@
 # Mitgeltende Unterlagen für die Masterarbeit
+Themenstellung: Entwicklung und Evaluation eines KI-gestützten Assistenten zur Interaktion mit SAP S/4HANA in der Produktionsplanung und -steuerung  
 Matrikelnummer: 6857683
 Semester: SS/2021
 
@@ -18,3 +19,6 @@ Das Modell ist im Ordner NER-Modell. Bitte die requirements.txt vor dem Test ins
 
 ## Testen der Klassifikationsergebnisse
 Das RF- und NN Modell befindet sich im jeweiligen Ordner. Darin befindet sich ein Jupyter Notebook, mit dem die Klassifikation der API-Parameter getestet werden kann. Bitte die requirements.txt vor dem Test installieren.
+
+## Ausführen des Chatbot UI
+Hierzu bitte in das Projektverzeichnis alfred-web navigieren. Darin ```npm start``` ausführen, dann werden alle Dependencies geladen und können ausgeführt werden.
