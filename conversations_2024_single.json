@@ -974,12 +974,12 @@
     },
     {
         "id": 37,
-        "prompt": "Wie heißt das Material 4711?",
+        "prompt": "Wie heißt das Material FG123?",
         "preprocessed_prompt": "Wie heißt das Material <Product>?",
         "entities": [
             [
                 23,
-                27,
+                29,
                 "Product"
             ]
         ],
@@ -997,12 +997,12 @@
     },
     {
         "id": 38,
-        "prompt": "Wie lautet die Beschreibung für das Produkt 4711?",
+        "prompt": "Wie lautet die Beschreibung für das Produkt FG123?",
         "preprocessed_prompt": "Wie lautet die Beschreibung für das Produkt <Product>?",
         "entities": [
             [
                 44,
-                48,
+                49,
                 "Product"
             ]
         ],
@@ -1020,12 +1020,12 @@
     },
     {
         "id": 39,
-        "prompt": "Was kostet das Produkt 5678?",
+        "prompt": "Was kostet das Produkt FG123?",
         "preprocessed_prompt": "Was kostet das Produkt <Product>?",
         "entities": [
             [
                 23,
-                27,
+                28,
                 "Product"
             ]
         ],
@@ -1042,12 +1042,12 @@
     },
     {
         "id": 40,
-        "prompt": "Zu welchem Typ gehört Produkt 8910?",
+        "prompt": "Zu welchem Typ gehört Produkt FG123?",
         "preprocessed_prompt": "Zu welchem Typ gehört Produkt <Product>?",
         "entities": [
             [
                 30,
-                34,
+                35,
                 "Product"
             ]
         ],
@@ -1065,12 +1065,12 @@
     },
     {
         "id": 51,
-        "prompt": "Welche Maßeinheiten verwendet Produkt 8910?",
+        "prompt": "Welche Maßeinheiten verwendet Produkt FG123?",
         "preprocessed_prompt": "Welche Maßeinheiten verwendet Produkt <Product>?",
         "entities": [
             [
                 38,
-                42,
+                43,
                 "Product"
             ]
         ],
@@ -1088,12 +1088,12 @@
     },
     {
         "id": 41,
-        "prompt": "Was sind die letzten Änderungen am Produkt UVWX?",
+        "prompt": "Was sind die letzten Änderungen am Produkt FG123?",
         "preprocessed_prompt": "Was sind die letzten Änderungen am Produkt <Product>?",
         "entities": [
             [
-                35,
-                39,
+                43,
+                48,
                 "Product"
             ]
         ],
@@ -1110,12 +1110,12 @@
     },
     {
         "id": 42,
-        "prompt": "Zeige mir die Planungsdaten für das Produkt A100 im Werk 1000.",
+        "prompt": "Zeige mir die Planungsdaten für das Produkt FG123 im Werk 1000.",
         "preprocessed_prompt": "Zeige mir die Planungsdaten für das Produkt <Product> im Werk <Plant>.",
         "entities": [
             [
-                34,
-                38,
+                44,
+                49,
                 "Product"
             ],
             [
@@ -1146,12 +1146,12 @@
     },
     {
         "id": 43,
-        "prompt": "Benötige MRP-Controller-Informationen für Produkt B200 im Werk 2000.",
+        "prompt": "Benötige MRP-Controller-Informationen für Produkt FG123 im Werk 2000.",
         "preprocessed_prompt": "Benötige MRP-Controller-Informationen für Produkt <Product> im Werk <Plant>.",
         "entities": [
             [
-                40,
-                44,
+                50,
+                55,
                 "Product"
             ],
             [
@@ -1179,12 +1179,12 @@
     },
     {
         "id": 44,
-        "prompt": "Was ist das Mindest- und Maximallos für Produkt C300 in Werk 3000?",
+        "prompt": "Was ist das Mindest- und Maximallos für Produkt FG123 in Werk 3000?",
         "preprocessed_prompt": "Was ist das Mindest- und Maximallos für Produkt <Product> in Werk <Plant>?",
         "entities": [
             [
-                33,
-                37,
+                48,
+                53,
                 "Product"
             ],
             [
@@ -1211,12 +1211,12 @@
     },
     {
         "id": 45,
-        "prompt": "Gib mir die ABC-Klassifizierung und das Profit Center für Produkt E500 im Werk 5000.",
+        "prompt": "Gib mir die ABC-Klassifizierung und das Profit Center für Produkt FG123 im Werk 5000.",
         "preprocessed_prompt": "Gib mir die ABC-Klassifizierung und den Gewinnzentrum für Produkt <Product> im Werk <Plant>.",
         "entities": [
             [
-                38,
-                42,
+                66,
+                71,
                 "Product"
             ],
             [
@@ -1242,12 +1242,12 @@
     },
     {
         "id": 46,
-        "prompt": "Benötige die Losgrößenbeschränkungen für Produkt G700 im Werk 7000.",
+        "prompt": "Benötige die Losgrößenbeschränkungen für Produkt FG123 im Werk 7000.",
         "preprocessed_prompt": "Benötige die Losgrößenbeschränkungen für Produkt <Product> im Werk <Plant>.",
         "entities": [
             [
-                40,
-                44,
+                49,
+                54,
                 "Product"
             ],
             [
@@ -1274,12 +1274,12 @@
     },
     {
         "id": 47,
-        "prompt": "Zeige den Verantwortlichen für MRP für Produkt H800 in Werk 8000.",
+        "prompt": "Zeige den Verantwortlichen für MRP für Produkt FG123 in Werk 8000.",
         "preprocessed_prompt": "Zeige den Verantwortlichen für MRP für Produkt <Product> im Werk <Plant>.",
         "entities": [
             [
-                42,
-                46,
+                47,
+                53,
                 "Product"
             ],
             [
@@ -1304,11 +1304,11 @@
     },
     {
         "id": 48,
-        "prompt": "Welche Verfügbarkeitsprüfung wird für Produkt I900 im Werk 9000 angewendet?",
+        "prompt": "Welche Verfügbarkeitsprüfung wird für Produkt FG123 im Werk 9000 angewendet?",
         "preprocessed_prompt": "Welche Verfügbarkeitsprüfung wird für Produkt <Product> im Werk <Plant> angewendet?",
         "entities": [
             [
-                47,
+                46,
                 51,
                 "Product"
             ],
@@ -1334,12 +1334,12 @@
     },
     {
         "id": 49,
-        "prompt": "Gib die Mindest- und Höchstbestände für Produkt J010 im Werk 0010 an.",
+        "prompt": "Gib die Mindest- und Höchstbestände für Produkt FG123 im Werk 0010 an.",
         "preprocessed_prompt": "Gib die Mindest- und Höchstbestände für Produkt <Product> im Werk <Plant> an.",
         "entities": [
             [
-                42,
-                46,
+                48,
+                53,
                 "Product"
             ],
             [
