@@ -87,7 +87,7 @@ def predict_v5():
                 llm_url = f"{config.LLM_HOST}:{config.LLM_PORT}/{config.LLM_ENDPOINT}"
             print("llm_url", llm_url)
 
-            # remove_metadata(data["d"])
+            remove_metadata(data["d"])  # Removes unnecessary metadata of API call
             sap_data = data.get("d")
 
             print("Data nach metadata removal", sap_data)
