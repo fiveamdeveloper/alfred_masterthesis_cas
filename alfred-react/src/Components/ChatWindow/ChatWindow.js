@@ -1,6 +1,5 @@
 import ChatInput from "./ChatInput/ChatInput";
 import MessageList from "./MessageList/MessageList";
-<<<<<<< Updated upstream
 
 function ChatWindow() {
     return (
