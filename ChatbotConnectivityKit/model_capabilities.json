@@ -1,0 +1,47 @@
+{
+    "model-5f": {
+        "is_chain_model": true,
+        "is_neural_network_model": false,
+        "is_tfidf_vectorizier": true,
+        "endpoint": true,
+        "method": true,
+        "select": true,
+        "required": true,
+        "filter": true,
+        "filter_select": false,
+        "expand": true,
+        "expand_select": false,
+        "alfred": true,
+        "presentation": true
+    },
+    "model-5g": {
+        "is_chain_model": true,
+        "is_neural_network_model": false,
+        "is_tfidf_vectorizier": true,
+        "endpoint": true,
+        "method": true,
+        "select": true,
+        "required": true,
+        "filter": true,
+        "filter_select": false,
+        "expand": true,
+        "expand_select": true,
+        "alfred": true,
+        "presentation": true
+    },
+    "model-5g2": {
+        "is_chain_model": false,
+        "is_neural_network_model": true,
+        "is_tfidf_vectorizier": true,
+        "endpoint": true,
+        "method": true,
+        "select": true,
+        "required": true,
+        "filter": true,
+        "filter_select": false,
+        "expand": true,
+        "expand_select": true,
+        "alfred": true,
+        "presentation": true
+    }
+}
