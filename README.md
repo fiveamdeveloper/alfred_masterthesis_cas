@@ -5,9 +5,12 @@ Matrikelnummer: 6857683
 Semester: SS/2021
 
 ## Installieren von Python, pip und NodeJS sowie NPM
-- Python 3.11.8 siehe https://www.python.org/downloads/  
-- pip siehe https://pip.pypa.io/en/stable/installation/  
-- NodeJS und npm https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+| Software | Version | Link |
+|----------|---------|------|
+| Python   | 3.11.8  | [https://www.python.org/downloads/](https://www.python.org/downloads/) |
+| pip      | -       | [https://pip.pypa.io/en/stable/installation/](https://pip.pypa.io/en/stable/installation/) |
+| NodeJS   | -       | [https://docs.npmjs.com/downloading-and-installing-node-js-and-npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) |
+| npm      | -       | [https://docs.npmjs.com/downloading-and-installing-node-js-and-npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) |
 
 ## Abhängigkeiten vor einem Test installieren
 Um die erforderlichen Python-Pakete zu installieren, die in der `requirements.txt` Datei aufgeführt sind, öffnen Sie bitte ein Terminal und und navigieren sie in das jeweilige Verzeichnis des Modells. Führen Sie darin den folgenden Befehl aus:
