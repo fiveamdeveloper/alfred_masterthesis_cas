@@ -5,6 +5,7 @@ Matrikelnummer: 6857683
 Semester: SS/2021
 
 ## Installieren von Python, pip und NodeJS sowie NPM
+Diese Pakete sind Grundvoraussetzung um die Pakete zu Testen. Für das Testen der Jupyter Notebooks wird VS Code empfohlen.
 | Software | Version | Link |
 |----------|---------|------|
 | Python   | 3.11.8  | [https://www.python.org/downloads/](https://www.python.org/downloads/) |
