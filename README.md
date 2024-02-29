@@ -17,7 +17,7 @@ pip install -r requirements.txt
 ```
 
 ## Informationen zum Testen mit den entwickelten Modellen
-Mögliche Fragen zum Testen der NER oder Klassifikation der Datei ```conversations_2024_single.json``` entnehmen, siehe Schlüssel ```prompt```. Das ist der ein-eindeutige Datensatz, welcher für das Training maschinell repliziert wurde. Für das Training wurden folgende Nummernkreise berücksichtigt:
+Mögliche Fragen zum Testen der NER oder Klassifikation der Datei ```conversations_2024_single.json``` entnehmen, siehe Schlüssel ```prompt```. Das ist der ein-eindeutige Datensatz, welcher für das Training maschinell repliziert wurde. Für das Training wurden folgende Nummernkreise berücksichtigt.
 
 ```bash
 plant_list = ["0001", "1010", "YS10", "YS15", "YS20", "YS25", "YS50"]
@@ -47,10 +47,15 @@ number_ranges = {
 }
 ```
 
-## Testen der Named Entity Recognition (NER)
+Ein Beispielhafter prompt könnte dann wie folgt aussehen
+```bash
+USER_PROMPT = "Gib die Mindest- und Höchstbestände für Produkt SG224 im Werk 1010 an."
+```
+
+### Testen der Named Entity Recognition (NER)
 Das dazugehörige Jupyter Notebook befindet sich im Ordner ```Named_Entitity_Recognition_NER```. Bitte die requirements.txt vor dem Test installieren.
 
-## Testen der Klassifikationsergebnisse
+### Testen der Klassifikationsergebnisse
 Das RF- und NN Modell befindet sich im jeweiligen Ordner. Darin befindet sich ein Jupyter Notebook, mit dem die Klassifikation der API-Parameter getestet werden kann. Bitte die requirements.txt vor dem Test installieren.
 
 ## ChatbotConnectivityKit
