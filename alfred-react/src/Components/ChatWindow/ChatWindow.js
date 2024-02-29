@@ -1,6 +1,6 @@
 import ChatInput from "./ChatInput/ChatInput";
 import MessageList from "./MessageList/MessageList";
-import { Alert, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { useState, useEffect, useRef } from 'react';
 import Image from "react-bootstrap/Image";
 import Col from "react-bootstrap/Col";
@@ -13,12 +13,14 @@ import "./ChatWindow.css";
 
 function ChatWindow() {
     const [messages, setMessages] = useState([]); // Zustand für Nachrichten
+    const [cardContent, setCardContent] = useState(''); // Zustand für den Inhalt der Card
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState('')
     const [hasScrollbar, setHasScrollbar] = useState(false);
     const historyRef = useRef(null);
     const messagesEndRef = useRef(null);
 
+    // ScrollbarCheck weil der Abstand der ChatBubble zum rechten Bildschirmrand nicht gleichmäßig ist
     const checkForScrollbar = () => {
         const element = historyRef.current;
         if (element) {
@@ -27,6 +29,12 @@ function ChatWindow() {
         }
     };
 
+    const handleCardButtonClick = (content) => {
+        setCardContent(content);
+        console.log(content)
+    };
+
+    // Nach dem Empfang einer neuen Nachricht wird automatisch nach unten zur neusten Nachricht gescrollt
     useEffect(() => {
         if (messagesEndRef.current) {
             messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -68,10 +76,6 @@ function ChatWindow() {
                 </div > : null
             }
 
-            {/*error ? <Alert variant="danger" className="mt-3">
-                Es ist ein Fehler aufgetreten. Bitte versuche es erneut.
-        </Alert> : ""*/}
-
             {
                 messages.length === 0 ?
                     <div className="d-flex flex-column flex-sm-row">
@@ -85,7 +89,7 @@ function ChatWindow() {
                                         </Card.Text>
                                     </div>
                                     <div className="d-flex flex-fill justify-content-end">
-                                        <Button variant="outline-primary"><PlayFill /></Button>
+                                        <Button variant="outline-primary" onClick={() => handleCardButtonClick('Wie ist der Status des Fertigungsauftrages 2654789?')}><PlayFill /></Button>
                                     </div>
                                 </Card.Body>
                             </Card>
@@ -100,7 +104,7 @@ function ChatWindow() {
                                         </Card.Text>
                                     </div>
                                     <div className="d-flex flex-fill justify-content-end">
-                                        <Button variant="outline-primary"><PlayFill /></Button>
+                                        <Button variant="outline-primary" onClick={() => handleCardButtonClick('Gib den Fertigungsauftrag 1235785 frei.')}><PlayFill /></Button>
                                     </div>
                                 </Card.Body>
                             </Card>
@@ -115,7 +119,7 @@ function ChatWindow() {
                                         </Card.Text>
                                     </div>
                                     <div className="d-flex flex-fill justify-content-end">
-                                        <Button variant="outline-primary"><PlayFill /></Button>
+                                        <Button variant="outline-primary" onClick={() => handleCardButtonClick('Zeig mir die Komponenten zum Fertigungsauftrag 1235785.')}><PlayFill /></Button>
                                     </div>
                                 </Card.Body>
                             </Card>
@@ -123,7 +127,7 @@ function ChatWindow() {
                     </div> : null
             }
 
-            <ChatInput setMessages={setMessages} messages={messages} setIsLoading={setIsLoading} isLoading={isLoading} setError={setError} />
+            <ChatInput setMessages={setMessages} messages={messages} setIsLoading={setIsLoading} isLoading={isLoading} setError={setError} inputValue={cardContent} setInputValue={setCardContent} />
 
 
         </Col>

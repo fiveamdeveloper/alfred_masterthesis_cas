@@ -1,4 +1,3 @@
-//import { CardText } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import ReactMarkdown from 'react-markdown';
 
@@ -13,14 +12,12 @@ function MessageItem({ message }) {
                 <Card.Body>
                     <Card.Subtitle className="mb-2 text-muted">{message.role === "user" ? "Felix" : "Alfred"}</Card.Subtitle>
 
-                    <div dangerouslySetInnerHTML={{ __html: message.content }} />
-
                     <ReactMarkdown>
-                        {/*message.content*/}
+                        {String(message.content)}
                     </ReactMarkdown>
                 </Card.Body>
             </Card>
-        </div >
+        </div>
     );
 }
 

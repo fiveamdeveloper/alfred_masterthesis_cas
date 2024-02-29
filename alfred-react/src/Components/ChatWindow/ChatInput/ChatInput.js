@@ -1,10 +1,15 @@
 import { FormControl, Button, Form, Spinner } from 'react-bootstrap';
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { SendFill } from 'react-bootstrap-icons';
-import { Alert } from 'react-bootstrap';
 
-function ChatInput({ messages, setMessages, setIsLoading, isLoading, setError, error }) {
-    const [inputValue, setInputValue] = useState('');
+function ChatInput({ messages, setMessages, setIsLoading, isLoading, setError, error, inputValue, setInputValue }) {
+    //const [inputValue, setInputValue] = useState('');
+
+    useEffect(() => {
+        if (inputValue !== '') {
+            setInputValue(inputValue);
+        }
+    }, [inputValue, setInputValue]);
 
     const handleSubmit = (event) => {
         event.preventDefault()
