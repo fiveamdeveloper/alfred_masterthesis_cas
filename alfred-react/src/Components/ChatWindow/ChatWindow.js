@@ -10,7 +10,7 @@ function ChatWindow() {
             </div>
             <ChatInput />
         </div >
-=======
+
 import { Alert, Button } from "react-bootstrap";
 import { useState, useEffect, useRef } from 'react';
 import Image from "react-bootstrap/Image";
@@ -138,7 +138,6 @@ function ChatWindow() {
 
 
         </Col>
->>>>>>> Stashed changes
     );
 }
 
