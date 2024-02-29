@@ -1,0 +1,4 @@
+.scrollbar-pr {
+    padding-right: 0.75rem !important;
+    /* zusätzlicher Rand, um Platz für die Scrollbar zu schaffen */
+}
