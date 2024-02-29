@@ -78,3 +78,5 @@ npm start
 
 die Web App starten. Dann werden alle Dependencies geladen und können ausgeführt werden. Bitte beachten, dass NodeJS und npm zuvor installiert werden müssen. <br><br>
 ![React Web App für den Chatbot Alfred](alfred_react.png "React Web App für den Chatbot Alfred")
+
+Bitte beachten, dass das Backend (ChatbotConnectivityKit) nicht an das SAP System außerhalb des Unternehmensnetzwerkes angebunden ist. Das Absenden einer Nachricht wird eine Fehlermeldung zurückliefern.
