@@ -18,6 +18,7 @@ from config import VERSION, NER_VERSION
 nlp = load_spacy_model(NER_VERSION)
 model_inference_instance = ModelInference(VERSION)
 
+
 # API Version 5
 @app.route("/api/v1/predict", methods=["POST"])
 def predict_v5():
@@ -30,8 +31,6 @@ def predict_v5():
     doc = nlp(text)
 
     print("[alfred_api]: Prompt:", text)
-
-    doc = nlp(text)
     entity = model_inference.extract_entities(doc)
     print("[spaCy] Erkannte Entität:", entity)
 
@@ -45,7 +44,6 @@ def predict_v5():
         config.BASE_URL, config.SAP_CLIENT, entity, decoded_predictions
     )
 
-    # return "Hello"
     # Request durchführen
     response = requests.get(
         url,
@@ -61,20 +59,22 @@ def predict_v5():
         print("decoded_prediction", decoded_predictions)
 
         def remove_metadata(obj):
-             if isinstance(obj, dict):
-                 obj.pop("__metadata", None)  # Entfernt __metadata, falls vorhanden
-                 for key, value in obj.items():
-                     remove_metadata(
-                         value
-                     )  # Rekursiver Aufruf für Werte, die selbst Dictionaries oder Listen sind
-             elif isinstance(obj, list):
-                 for item in obj:
-                     remove_metadata(
-                         item
-                     )  # Rekursiver Aufruf für jedes Element in der Liste
+            if isinstance(obj, dict):
+                obj.pop("__metadata", None)  # Entfernt __metadata, falls vorhanden
+                for key, value in obj.items():
+                    remove_metadata(
+                        value
+                    )  # Rekursiver Aufruf für Werte, die selbst Dictionaries oder Listen sind
+            elif isinstance(obj, list):
+                for item in obj:
+                    remove_metadata(
+                        item
+                    )  # Rekursiver Aufruf für jedes Element in der Liste
 
         if response.status_code == 200 and data:
-            print("[alfred-llm-connector]: Aufbereitung für Chatbot in LLM gestartet...")
+            print(
+                "[alfred-llm-connector]: Aufbereitung für Chatbot in LLM gestartet..."
+            )
 
             headers = {
                 "Authorization": f"Bearer {config.LLM_REMOTE_TOKEN}",
@@ -87,22 +87,23 @@ def predict_v5():
                 llm_url = f"{config.LLM_HOST}:{config.LLM_PORT}/{config.LLM_ENDPOINT}"
             print("llm_url", llm_url)
 
-            remove_metadata(data["d"])
+            # remove_metadata(data["d"])
+            sap_data = data.get("d")
 
-            print("Data nach metadata removal", data["d"])
-            generation_prompt = f"Using the provided data, generate a summary that is natural, clear, and easily understandable for non-technical users. The summary focuses on the essential details of the order without using technical jargon and answers this question/phrase: {text}. Do not repeat the question/phase, directly answer. Here is the data to summarize: {data.get("d")} ."
+            print("Data nach metadata removal", sap_data)
+            generation_prompt = f"Using the provided data, generate a summary that is natural, clear, and easily understandable for non-technical users. The summary focuses on the essential details of the order without using technical jargon and answers this question/phrase: {text}. Do not repeat the question/phase, directly answer. Here is the data to summarize: {sap_data}."
 
-            # generation_prompt = f"You are quesitoned: {text}. In response you received this data from an API Please generate a summary from the following exact ERP system data without altering any values. The summary should be in clear, plain language, understandable for non-technical users. It should focus on conveying the essential details of the order accurately, while avoiding technical jargon. ERP Data: {data.get("d")}. Emphasize clarity and accuracy in your summary. Answer in german."
+            # generation_prompt = f"You are quesitoned: {text}. In response you received this data from an API Please generate a summary from the following exact ERP system data without altering any values. The summary should be in clear, plain language, understandable for non-technical users. It should focus on conveying the essential details of the order accurately, while avoiding technical jargon. ERP Data: {sap_data}. Emphasize clarity and accuracy in your summary. Answer in german."
 
-            # generation_prompt = f"You are being asked for: '{text}'. In response you received the following data: {data.get("d")}. Please answer the questions you were asked for with the given data, without altering the values. The summary should be in clear, plain language, understandable for non-technical users. It should focus on conveying the essential details accurately, while avoiding technical jargon. Emphasize clarity and accuracy in your summary."
+            # generation_prompt = f"You are being asked for: '{text}'. In response you received the following data: {sap_data}. Please answer the questions you were asked for with the given data, without altering the values. The summary should be in clear, plain language, understandable for non-technical users. It should focus on conveying the essential details accurately, while avoiding technical jargon. Emphasize clarity and accuracy in your summary."
 
             # Wenn das Ergebnis in einer Tabelle auszugeben ist, dann soll die LLM eine Markdown Tabelle erstellen
-            #if decoded_predictions["presentation"] == "table":
-            # generation_prompt = f"You are being asked for: '{text}'. In response you received the following data: {data.get("d")}. Please answer the questions you were asked for with the given data, without altering the values. Prepare based von the given data a markdown table, without explaining what you did. User the given keys in the JSON as header in the tables."
+            if decoded_predictions["presentation"] == "table":
+                generation_prompt = f"You are being asked for: '{text}'. In response you received the following data: {sap_data}. Please answer the questions you were asked for with the given data, without altering the values. Prepare based von the given data a markdown table, without explaining what you did. Use the given keys in the JSON as header in the tables."
 
             print("generation_prompt", generation_prompt)
 
-            if config.REMOTE_LLM == True: # Remote LLM
+            if config.REMOTE_LLM == True:  # Remote LLM
                 llm_data = json.dumps(
                     {
                         "inputs": generation_prompt,
@@ -110,7 +111,7 @@ def predict_v5():
                     }
                 )
             else:
-                llm_data = json.dumps( # Local LLM
+                llm_data = json.dumps(  # Local LLM
                     {
                         "model": config.LLM_MODEL,
                         "prompt": generation_prompt,
@@ -120,10 +121,10 @@ def predict_v5():
 
             try:
                 response = requests.post(
-                     llm_url,
-                     data=llm_data,
-                     headers=headers,
-                 )
+                    llm_url,
+                    data=llm_data,
+                    headers=headers,
+                )
 
                 if response.status_code == 200:
                     print("Erfolgreich:", response.text)
@@ -147,43 +148,54 @@ def predict_v5():
                             },
                             "sapApiData": data.get("d"),
                         }
-                     )
+                    )
                 else:
                     return (
-                         jsonify(
-                             {
-                                 "error": "Ein Fehler beim Verbinden mit dem LLM-Connector ist aufgetreten .",
-                                 "details": f"Statuscode: {response.status_code}. Bitte versuchen Sie es später erneut oder kontaktieren Sie den Support.",
+                        jsonify(
+                            {
+                                "error": "Ein Fehler beim Verbinden mit dem LLM-Connector ist aufgetreten .",
+                                "details": f"Statuscode: {response.status_code}. Bitte versuchen Sie es später erneut oder kontaktieren Sie den Support.",
                                 "role": "assistant",
-                                 "type": "danger",
-                             }
-                         ),
-                         response.status_code,
-                     )
+                                "type": "danger",
+                            }
+                        ),
+                        response.status_code,
+                    )
             except requests.exceptions.RequestException as e:
-                 error_message = str(e).split(" for url:")[
-                     0
-                 ]  # Behält nur den Fehlerstatus bei
-                 return (
-                     jsonify(
-                         {
-                             "error": "Ein Fehler ist aufgetreten bei der Anfrage.",
-                             "details": error_message,
-                         }
-                     ),
-                     500,
-                 )
+                error_message = str(e).split(" for url:")[
+                    0
+                ]  # Behält nur den Fehlerstatus bei
+                return (
+                    jsonify(
+                        {
+                            "error": "Ein Fehler ist aufgetreten bei der Anfrage.",
+                            "details": error_message,
+                        }
+                    ),
+                    500,
+                )
         else:
-             return (
-                 jsonify(
-                     {
-                         "role": "assistant",
-                         "content": f"Das hat leider nicht geklappt. Bitte versuche es erneut. {str(response)}",
-                         "type": "danger",
-                     }
-                 ),
-                 404,
-             )
+            return (
+                jsonify(
+                    {
+                        "role": "assistant",
+                        "content": f"Das hat leider nicht geklappt. Bitte versuche es erneut. {str(response)}",
+                        "type": "danger",
+                    }
+                ),
+                404,
+            )
+    else:
+        return (
+            jsonify(
+                {
+                    "role": "assistant",
+                    "content": f"Das hat leider nicht geklappt. Bitte starte das LLM.",
+                    "type": "danger",
+                }
+            ),
+            404,
+        )
 
 
 if __name__ == "__main__":
