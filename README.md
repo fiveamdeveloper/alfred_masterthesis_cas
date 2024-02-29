@@ -16,6 +16,37 @@ Um die erforderlichen Python-Pakete zu installieren, die in der `requirements.tx
 pip install -r requirements.txt
 ```
 
+## Informationen zum Testen mit den entwickelten Modellen
+Mögliche Fragen zum Testen der NER oder Klassifikation der Datei ```conversations_2024_single.json``` entnehmen, siehe Schlüssel ```prompt```. Das ist der ein-eindeutige Datensatz, welcher für das Training maschinell repliziert wurde. Für das Training wurden folgende Nummernkreise berücksichtigt:
+
+```bash
+plant_list = ["0001", "1010", "YS10", "YS15", "YS20", "YS25", "YS50"]
+product_list = ["SG124", "SG224", "FG226", "FG228", "FG113", "RM142", "RM143", "RM234", "RM124"]
+
+number_ranges = {
+    "ManufacturingOrder": {
+        "from": 1000000,
+        "to": 1999999
+    },
+    "OrderId": {
+        "from": 1000000,
+        "to": 1999999
+    },
+    "ConfirmationGroup": {
+        "from": 1000,
+        "to": 9999
+    },
+    "ConfirmationCount": {
+         "from": 1,
+        "to": 1000
+    },
+    "Operation": {
+         "from": 1,
+        "to": 1000
+    }
+}
+```
+
 ## Testen der Named Entity Recognition (NER)
 Das dazugehörige Jupyter Notebook befindet sich im Ordner ```Named_Entitity_Recognition_NER```. Bitte die requirements.txt vor dem Test installieren.
 
